@@ -1,7 +1,12 @@
 # InsightExpress - AI-Powered Newsletter Agent
+### Powered By Langflow
 
 ## Overview
-InsightExpress is a Next.js application that generates AI-powered research reports based on user-provided topics and emails them to users. The application leverages Langflow for its AI capabilities and features a modern, responsive UI built with shadcn/ui components.
+InsightExpress is a Next.js application that generates AI-powered research reports based on user-provided topics and emails them to users. The application leverages Langflow for its AI capabilities and features a modern, responsive UI built using NextJS.
+
+
+https://github.com/user-attachments/assets/3d364aef-8a1b-4bd2-a782-a9fb8b33b735
+
 
 ## Prerequisites
 
