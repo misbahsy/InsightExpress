@@ -12,7 +12,10 @@ export function LoadingSteps() {
     { text: "Gathering relevant data...", completed: false },
     { text: "Analyzing information...", completed: false },
     { text: "Summarizing findings...", completed: false },
-    { text: "Generating final report...", completed: false },
+    { text: "Formatting newsletter...", completed: false },
+    { text: "Generating final newsletter...", completed: false },
+    { text: "Preparing email delivery...", completed: false }, 
+    { text: "Sending newsletter to your inbox...", completed: false }
   ]);
 
   useEffect(() => {
@@ -25,7 +28,7 @@ export function LoadingSteps() {
           index === firstIncompleteIndex ? { ...step, completed: true } : step
         );
       });
-    }, 5000);
+    }, 8000); // 8 seconds per step = ~64 seconds total
 
     return () => clearInterval(interval);
   }, []);
@@ -53,4 +56,4 @@ export function LoadingSteps() {
       ))}
     </div>
   );
-} 
+}
