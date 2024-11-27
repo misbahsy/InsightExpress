@@ -131,8 +131,8 @@ export default function Home() {
                 className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 {isLoading
-                  ? 'Generating Research Report...'
-                  : 'Generate Research Report'}
+                  ? 'Generating Newletter...'
+                  : 'Generate Newletter'}
               </Button>
 
               {isLoading && (
@@ -144,44 +144,60 @@ export default function Home() {
           </Card>
 
           {researchResult && (
-            <Card className="mt-8 bg-black/50 backdrop-blur-xl border-purple-500/20">
-              <div className="p-6">
-                <h2 className="text-xl font-semibold text-white mb-4">
+            <Card className="mt-8 bg-white border-gray-200">
+              <div className="p-8">
+                <h2 className="text-xl font-semibold text-gray-900 mb-6 pb-3 border-b-2 border-gray-200 flex items-center gap-2">
+                  <SearchIcon className="h-5 w-5 text-purple-600" />
                   Research Results
                 </h2>
-                <div className="prose prose-invert max-w-none">
+                <div className="prose max-w-none">
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     components={{
                       img: ({ node, ...props }) => (
                         <img
                           {...props}
-                          className="rounded-lg shadow-lg my-4 w-full object-cover"
+                          className="rounded-lg shadow-lg my-8 w-full object-cover"
                           loading="lazy"
                         />
                       ),
                       a: ({ node, ...props }) => (
                         <a
                           {...props}
-                          className="text-purple-400 hover:text-purple-300 transition-colors"
+                          className="text-purple-600 hover:text-purple-800 transition-colors"
                           target="_blank"
                           rel="noopener noreferrer"
                         />
                       ),
                       h1: ({ node, ...props }) => (
-                        <h1
-                          {...props}
-                          className="text-2xl font-bold mt-8 mb-4"
-                        />
+                        <div className="mt-12 mb-8">
+                          <h1
+                            {...props}
+                            className="text-2xl font-bold text-gray-900 mb-6"
+                          />
+                          <hr className="border-t-2 border-gray-100 my-8" />
+                        </div>
                       ),
                       h2: ({ node, ...props }) => (
-                        <h2
-                          {...props}
-                          className="text-xl font-semibold mt-6 mb-3"
-                        />
+                        <div className="mt-10 mb-6">
+                          <h2
+                            {...props}
+                            className="text-xl font-semibold text-gray-900"
+                          />
+                          <hr className="border-t border-gray-100 my-6" />
+                        </div>
                       ),
                       p: ({ node, ...props }) => (
-                        <p {...props} className="text-gray-300 mb-4" />
+                        <p {...props} className="text-gray-700 mb-6 leading-relaxed text-lg" />
+                      ),
+                      ul: ({ node, ...props }) => (
+                        <ul {...props} className="my-6 space-y-3" />
+                      ),
+                      li: ({ node, ...props }) => (
+                        <li {...props} className="text-gray-700 leading-relaxed" />
+                      ),
+                      hr: ({ node, ...props }) => (
+                        <hr {...props} className="my-12 border-t-2 border-gray-100" />
                       ),
                     }}
                   >
